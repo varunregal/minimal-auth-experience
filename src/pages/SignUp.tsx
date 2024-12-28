@@ -40,7 +40,7 @@ const SignUp = () => {
       firstName: "",
       lastName: "",
       role: "mentee",
-      category: "",
+      category: "none",
     },
   });
 
@@ -163,7 +163,7 @@ const SignUp = () => {
                         </SelectTrigger>
                       </FormControl>
                       <SelectContent>
-                        <SelectItem value="">None</SelectItem>
+                        <SelectItem value="none">None</SelectItem>
                         <SelectItem value="pre-health">Pre-health</SelectItem>
                         <SelectItem value="graduate">Graduate</SelectItem>
                       </SelectContent>
