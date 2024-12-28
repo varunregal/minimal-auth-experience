@@ -11,7 +11,7 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Link } from "react-router-dom";
 
 const formSchema = z.object({
@@ -33,10 +33,15 @@ const SignIn = () => {
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen flex items-center justify-center bg-gray-50/50 py-12 px-4 sm:px-6 lg:px-8">
       <Card className="w-full max-w-md">
-        <CardHeader className="space-y-1">
-          <CardTitle className="text-2xl text-center font-bold">Sign in</CardTitle>
+        <CardHeader className="space-y-2">
+          <CardTitle className="text-3xl font-bold text-center bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-transparent">
+            Welcome Back
+          </CardTitle>
+          <CardDescription className="text-center text-muted-foreground">
+            Sign in to your account to continue your journey
+          </CardDescription>
         </CardHeader>
         <CardContent>
           <Form {...form}>
@@ -48,7 +53,7 @@ const SignIn = () => {
                   <FormItem>
                     <FormLabel>Email</FormLabel>
                     <FormControl>
-                      <Input placeholder="Enter your email" {...field} />
+                      <Input placeholder="john.doe@example.com" type="email" {...field} />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -61,17 +66,17 @@ const SignIn = () => {
                   <FormItem>
                     <FormLabel>Password</FormLabel>
                     <FormControl>
-                      <Input type="password" placeholder="Enter your password" {...field} />
+                      <Input type="password" placeholder="••••••••" {...field} />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
                 )}
               />
-              <div className="flex items-center justify-between">
-                <Link to="/reset-password" className="text-sm text-blue-600 hover:text-blue-500">
+              <div className="flex items-center justify-between text-sm">
+                <Link to="/reset-password" className="text-primary hover:text-primary/80 hover:underline">
                   Forgot password?
                 </Link>
-                <Link to="/signup" className="text-sm text-blue-600 hover:text-blue-500">
+                <Link to="/signup" className="text-primary hover:text-primary/80 hover:underline">
                   Don't have an account?
                 </Link>
               </div>
